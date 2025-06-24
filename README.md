@@ -1,5 +1,3 @@
-Eles Warrant Pricing and Backtest
-
 This repository contains a Python-based analysis and backtesting tool for the Eles S.p.A. warrant listed on Borsa Italiana. It uses the Black-Scholes model to estimate the fair value of the warrant and implements a trading strategy based on observed market mispricings.
 
 📈 Objective
@@ -15,26 +13,27 @@ Backtest a rule-based strategy that buys when the warrant is undervalued and sel
 The Black-Scholes formula is used to calculate the theoretical price of a European call option:
 
 
+![image](https://github.com/user-attachments/assets/3d7d7b2a-23a8-4723-b674-71dd328fba0b)
+
 
 Where:
 
-: current price of the underlying stock
+S₀ : current price of the underlying stock
 
-: strike price
+K : strike price
 
-: time to maturity in years
+T : time to maturity in years
 
-: risk-free interest rate (10Y BTP used as proxy)
+r : risk-free interest rate (10Y BTP used as proxy)
 
-: volatility of the underlying stock (computed with a 30-day rolling window)
+σ : volatility of the underlying stock (computed with a 30-day rolling window)
 
-: cumulative distribution function of the standard normal distribution
-
-
+N(x) : cumulative distribution function of the standard normal distribution
 
 
+A warrant gives the right to buy a certain amount of the underlying stock, defined by the conversion ratio. The theoretical warrant price is computed by dividing the option price 𝐶:
 
-The warrant price is derived by dividing the call option value by the conversion ratio:
+Warrant Price = C / Conversion Ratio
 
 
 
@@ -70,7 +69,6 @@ Price Comparison
 
 ![Figure_1](https://github.com/user-attachments/assets/9ffcfc3c-a877-42a7-9241-79d565fa5816)
 
-![Figure_2](https://github.com/user-attachments/assets/2ab00aca-20f6-45df-aba1-ed98f51f449c)
 
 
 🎓 Disclaimer
